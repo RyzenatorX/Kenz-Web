@@ -407,3 +407,30 @@ body {
     box-shadow: 0 0 45px rgba(0, 194, 255, 0.4);
   }
 }
+/* === About Section - Larger Image Version (Balanced Layout) === */
+@media (min-width: 992px) {
+  .about-card {
+    grid-template-columns: 600px 1fr; /* Naik dari 520px → lebih besar */
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-media img {
+    width: 100%;
+    max-width: 560px; /* dari 500px → makin besar */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .about-media img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(0, 194, 255, 0.45);
+  }
+
+  .about-body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
