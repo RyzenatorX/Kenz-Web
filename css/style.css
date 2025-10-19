@@ -110,7 +110,7 @@ body{
   box-shadow:0 12px 40px rgba(0,194,255,0.08);
 }
 
-/* === Hero Visual === */
+/* === Hero Visual === 
 .hero-visual{
   width:360px;
   height:260px;
@@ -118,7 +118,7 @@ body{
   background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(0,194,255,0.06));
   box-shadow:0 10px 40px rgba(3,8,20,0.6);
   display:block;
-}
+}*/
 
 /* === Features === */
 .features{padding:60px 0;}
