@@ -386,3 +386,24 @@ body {
 
   /* ... (sisanya tempel di sini persis seperti kode yang kamu tulis) ... */
 }
+/* === About Section - Bigger Image Version === */
+@media (min-width: 992px) {
+  .about-card {
+    grid-template-columns: 520px 1fr; /* dulu 450px, sekarang lebih lebar */
+    gap: 2.5rem;
+  }
+
+  .about-media img {
+    width: 100%;
+    max-width: 500px; /* naik dari 420px */
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(138, 92, 246, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* efek hover biar makin keren */
+  .about-media img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(0, 194, 255, 0.4);
+  }
+}
