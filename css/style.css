@@ -22,10 +22,10 @@ html,body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
-body{
-  background:linear-gradient(135deg,var(--bg-1),/*#08102a 40%,*/ #041533 100%);
-  color:#e6eef8;
-  line-height:1.5;
+body {
+  background-color: #041533;
+  color: #e6eef8;
+  line-height: 1.5;
 }
 
 /* === Layout === */
