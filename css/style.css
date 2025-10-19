@@ -75,3 +75,32 @@ body{background:linear-gradient(135deg,var(--bg-1),#08102a 40%, #041533 100%);co
 /* reveal animation initial */
 [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 [data-reveal].is-visible{opacity:1;transform:none}
+
+/* === Responsive Tweaks (Desktop Improvements) === */
+@media (min-width: 992px) {
+  /* Hero Section: smaller text for large screens */
+  .hero h1 {
+    font-size: 2.6rem; /* dari sebelumnya clamp(1.8rem, 3.6vw, 3.6rem) */
+  }
+
+  .hero .lead {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  /* About Section: make image bigger & balanced */
+  .about-card {
+    grid-template-columns: 420px 1fr; /* lebih lebar buat gambar */
+  }
+
+  .about-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+  }
+
+  .about-body h2 {
+    font-size: 1.8rem;
+  }
+}
