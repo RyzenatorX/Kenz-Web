@@ -297,3 +297,27 @@ body {
   .feature-card p { font-size: 0.95rem; line-height: 1.5; }
   .feature-icon { width: 64px; height: 64px; }
 }
+
+/* === About Section - Balanced Image for Desktop === */
+@media (min-width: 992px) {
+  .about-card {
+    grid-template-columns: 480px 1fr; /* dari 600px → lebih proporsional */
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .about-media img {
+    width: 100%;
+    max-width: 480px; /* dari 560px → lebih kecil */
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-media img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 55px rgba(0, 194, 255, 0.4);
+  }
+}
+
