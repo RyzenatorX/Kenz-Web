@@ -259,43 +259,29 @@ body {
   transform: none;
 }
 
-/* === Responsive Tweaks (Desktop) === */
+/* === About Section - Smaller Balanced Image (Final) === */
 @media (min-width: 992px) {
-  /* Hero */
-  .hero h1 { font-size: 2.6rem; }
-  .hero .lead { font-size: 1.1rem; max-width: 600px; }
-
-  /* About - Balanced Image */
   .about-card {
-    grid-template-columns: 480px 1fr; /* proporsional di PC */
-    gap: 2.5rem;
+    grid-template-columns: 430px 1fr; /* turun dari 480px → lebih kecil & proporsional */
+    gap: 2.2rem;
     align-items: center;
   }
 
   .about-media img {
     width: 100%;
-    max-width: 480px;
+    max-width: 430px; /* turun dari 480px */
     height: auto;
-    border-radius: 18px;
-    box-shadow: 0 0 35px rgba(139, 92, 246, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .about-media img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 55px rgba(0, 194, 255, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(0, 194, 255, 0.35);
   }
 
   .about-body h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
-
-  /* Features */
-  .section-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
-  }
-  .feature-card h3 { font-size: 1.25rem; }
-  .feature-card p { font-size: 0.95rem; line-height: 1.5; }
-  .feature-icon { width: 64px; height: 64px; }
 }
