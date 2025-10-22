@@ -58,3 +58,34 @@
     }
   });
 })();
+
+// Custom smooth scroll (lebih halus dari CSS bawaan)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition - 60; // offset 60px biar ga ketutup header
+      const duration = 1000; // durasi (ms) — bisa ubah jadi 1200 untuk lebih lambat
+      let start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const scroll = easeInOutCubic(progress / duration) * distance + startPosition;
+        window.scrollTo(0, scroll);
+        if (progress < duration) window.requestAnimationFrame(step);
+      }
+
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      window.requestAnimationFrame(step);
+    }
+  });
+});
+
