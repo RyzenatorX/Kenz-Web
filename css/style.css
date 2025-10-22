@@ -252,6 +252,7 @@ body{
 /* Accessibility: focus ring */
 a:focus, button:focus { outline: 2px solid rgba(155,48,255,0.12); outline-offset:2px; }
 
+/* Smooth scroll effect */
 html {
   scroll-behavior: smooth;
 }
