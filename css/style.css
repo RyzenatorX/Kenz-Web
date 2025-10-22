@@ -254,6 +254,6 @@ a:focus, button:focus { outline: 2px solid rgba(155,48,255,0.12); outline-offset
 
 /* Smooth scroll effect */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
