@@ -1,66 +1,60 @@
-// script.js - dark mode toggle, smooth scroll, reveal on scroll
-const STORAGE_KEY = 'user-color-scheme';
-const COLOR_MODE_KEY = '--color-mode';
+// Theme + mobile nav script (paste ke js/script.js)
+(function(){
+  const body = document.documentElement; // toggling on root makes :root.light easy
+  const modeToggle = document.querySelector('.js-mode-toggle');
+  const modeText = document.querySelector('.js-mode-toggle-text');
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
 
-const modeToggleButton = document.querySelector('.js-mode-toggle');
-const modeToggleText = document.querySelector('.js-mode-toggle-text');
+  // Load saved theme
+  const saved = localStorage.getItem('kenzx-theme');
+  if (saved === 'light') body.classList.add('light');
 
-const getCSSCustomProp = (propKey) => {
-  let response = getComputedStyle(document.documentElement).getPropertyValue(propKey);
-  if (response.length) response = response.replace(/'|"/g, '').trim();
-  return response;
-};
-
-const applySetting = passedSetting => {
-  let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
-  if(currentSetting){
-    document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
-    setButtonLabel(currentSetting);
-  } else {
-    setButtonLabel(getCSSCustomProp(COLOR_MODE_KEY) || 'dark');
+  function updateModeUI(){
+    const isLight = body.classList.contains('light');
+    if(modeText){
+      modeText.textContent = isLight ? 'Switch to dark' : 'Switch to light';
+    }
+    if(modeToggle){
+      modeToggle.setAttribute('aria-pressed', String(isLight));
+    }
   }
-}
+  updateModeUI();
 
-const toggleSetting = () => {
-  let currentSetting = localStorage.getItem(STORAGE_KEY);
-  switch(currentSetting){
-    case null:
-      currentSetting = getCSSCustomProp(COLOR_MODE_KEY) === 'dark' ? 'light' : 'dark';
-      break;
-    case 'light': currentSetting = 'dark'; break;
-    case 'dark': currentSetting = 'light'; break;
+  // Toggle theme
+  if(modeToggle){
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const isLight = body.classList.contains('light');
+      localStorage.setItem('kenzx-theme', isLight ? 'light' : 'dark');
+      updateModeUI();
+    });
   }
-  localStorage.setItem(STORAGE_KEY, currentSetting);
-  return currentSetting;
-}
 
-const setButtonLabel = currentSetting => {
-  if(modeToggleText) modeToggleText.innerText = `Switch to ${currentSetting === 'dark' ? 'light' : 'dark'} theme`;
-  if(modeToggleButton) modeToggleButton.setAttribute('aria-pressed', currentSetting === 'dark');
-}
+  // NAV toggle (mobile)
+  if(navToggle && nav){
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const expanded = nav.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', String(expanded));
+    });
 
-if(modeToggleButton){
-  modeToggleButton.addEventListener('click', evt => {
-    evt.preventDefault();
-    applySetting(toggleSetting());
+    // close nav when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !navToggle.contains(e.target) && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Small enhancement: keyboard nav close (Escape)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if(navToggle) navToggle.setAttribute('aria-expanded','false');
+      }
+    }
   });
-}
-
-applySetting();
-
-// smooth scrolling for internal anchors
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
-  });
-});
-
-// reveal on scroll
-const revealElements = document.querySelectorAll('[data-reveal]');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('is-visible');
-  });
-},{threshold:0.12,rootMargin:'0px 0px -10% 0px'});
-revealElements.forEach(el => revealObserver.observe(el));
+})();
