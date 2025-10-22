@@ -69,7 +69,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition - 60; // offset 60px biar ga ketutup header
-      const duration = 1000; // durasi (ms) — bisa ubah jadi 1200 untuk lebih lambat
+      const duration = 900; // durasi (ms) — bisa ubah jadi 1200 untuk lebih lambat
       let start = null;
 
       function step(timestamp) {
