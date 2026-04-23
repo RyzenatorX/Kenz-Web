@@ -1,40 +1,107 @@
-:root{
-  /* warna dasar — sesuaikan --bg-1 jika mau ungu neon */
-  --bg-1: #041533;
-  --bg-2: #060926;
-  --accent: #9b30ff;
-  --muted: #93a3c2;
-  --text: #e6eef8;
-  --glass: rgba(255,255,255,0.04);
-  --radius: 12px;
-
-  /* ukuran responsif */
-  --container-max: 1200px;
-  --gap: 1.25rem;
+/* ====== GLOBAL CARD SYSTEM (UNIFIED) ====== */
+:root {
+  --card-bg: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
 }
 
-/* Light mode overrides */
-:root.light {
-  --bg-1: #f7f8fb;
-  --bg-2: #eef2fb;
-  --accent: #6b3bff;
-  --text: #0b1220;
-  --muted: #6b7280;
-  --glass: rgba(11,18,32,0.03);
+/* GRID SAMA UNTUK SEMUA */
+.features-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-/* Base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  background-color: var(--bg-1);
+/* CARD UNIVERSAL */
+.card,
+.feature-card,
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* HOVER SAMA */
+.card:hover,
+.feature-card:hover,
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+/* ICON SAMA */
+.feature-icon,
+.project-icon {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+/* TITLE SAMA */
+.card h3,
+.feature-card h3,
+.project-card h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* TEXT SAMA */
+.card p,
+.feature-card p,
+.project-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* LINK PROJECT */
+.project-link {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+/* BIAR LINK GAK BIRU */
+.project-card,
+.project-card:link,
+.project-card:visited {
+  text-decoration: none;
   color: var(--text);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  transition: background-color .25s ease, color .25s ease;
+}
+
+/* COMING SOON */
+.coming-soon {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.coming-soon:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .features-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .feature-card,
+  .project-card {
+    padding: 1.2rem;
+  }
+}  transition: background-color .25s ease, color .25s ease;
 }
 
 /* Container */
