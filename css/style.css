@@ -257,44 +257,39 @@ html {
   scroll-behavior: auto;
 }
 
-/* Projects Section */
-.projects {
-  padding: 4rem 0;
-  background: var(--bg-2);
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.projects-grid {
+/* ========== OUR FEATURES & PROJECTS (SAME STYLE) ========== */
+.features-grid, .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.project-card {
+.feature-card, .project-card {
   background: var(--card-bg);
+  backdrop-filter: blur(4px);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius);
   padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect SAMA untuk feature & project */
+.feature-card:hover, .project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+/* Hilangin biru/biru di link project */
+.project-card {
   text-decoration: none;
   color: var(--text);
-  transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-}
-
-/* HILANGIN WARNA BIRU/BIRU DI LINK PROJECT */
 .project-card:visited,
 .project-card:link,
 .project-card:any-link {
@@ -302,22 +297,27 @@ html {
 }
 
 .project-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .project-link {
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 500;
-  margin-top: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 .coming-soon {
   opacity: 0.6;
-  cursor: not-allowed;
+  cursor: default;
 }
 
 .coming-soon:hover {
   transform: none;
   border-color: var(--border);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
