@@ -1,112 +1,116 @@
 <!doctype html>
-<html lang="id" data-user-color-scheme="dark">
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KenzX — Home</title>
-  <meta name="description" content="KenzX — creative dev & projects. Dark neon theme." />
-  <link rel="icon" href="assets/profile.jpg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="ready">
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">KenzX</div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="toggle-button js-mode-toggle" aria-pressed="true">
-        <span class="toggle-icon" aria-hidden="true"></span>
-        <span class="toggle-text js-mode-toggle-text">Switch to light</span>
-      </button>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">KenzX</div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Welcome to <span class="accent">KenzX</span></h1>
+      <p>Building modern web with clean UI.</p>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1>Welcome to <span class="accent">KenzX</span></h1>
-          <p class="lead">Building amazing digital experiences with modern technology — dark neon style.</p>
-          <a class="btn" href="#features">Explore Features</a>
-        </div>
-        <!--<div class="hero-visual" aria-hidden="true"></div> -->
+<!-- FEATURES -->
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">Our Features</h2>
+
+    <div class="features-grid">
+
+      <div class="card">
+        <div class="feature-icon">🚀</div>
+        <h3>Fast Performance</h3>
+        <p>Optimized for speed and smooth interaction.</p>
       </div>
-    </section>
 
-    <section id="features" class="features">
-      <div class="container">
-        <h2 class="section-title">Our Features</h2>
-        <div class="features-grid">
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon">🚀</div>
-            <h3>Fast Performance</h3>
-            <p>Optimized for speed and smooth interaction.</p>
-          </article>
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon">🔒</div>
-            <h3>Secure & Safe</h3>
-            <p>Privacy-first approach and solid security basics.</p>
-          </article>
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon">📱</div>
-            <h1>Responsive Design</h1>
-            <p>Looks great on all devices — mobile, tablet and desktop.</p>
-          </article>
-        </div>
+      <div class="card">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Safe</h3>
+        <p>Privacy-first approach and solid security basics.</p>
       </div>
-    </section>
 
-    <    <section id="about" class="about">
-      <div class="container about-inner">
-        <div class="about-card" data-reveal>
-          <div class="about-media">
-            <img src="assets/images/profile.jpg" alt="KenzX profile" />
-          </div>
-          <div class="about-body">
-            <h2>About <span class="accent">KenzX</span></h2>
-            <p class="muted">Creative developer who loves neon, code, and polished UX. Focused on building practical tools and delightful interfaces.</p>
-            <ul class="profile-links">
-             <li><strong>WhatsApp</strong>
-    <a href="https://wa.me/6285753423343?text=Hi%20KenzX" class="contact-link">
-        Contact via WhatsApp
-    </a>
-</li>
-<li><strong>Email</strong>
-    <a href="mailto:Ryzenatorx@gmail.com" class="contact-link">
-        Ryzenatorx@gmail.com
-    </a>
-</li>
-              
-              <li><strong>GitHub</strong><span>@RyzenatorX</span></li>
-              <li><strong>Telegram</strong><span>@RyzenatorX</span></li>
-            </ul>
-            <a class="btn ghost" href="#contact">Contact Me</a>
-          </div>
-        </div>
+      <div class="card">
+        <div class="feature-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>Looks great on all devices.</p>
       </div>
-    </section>
 
-    <!-- ========== MY PROJECTS SECTION (POSISI BENAR - DI ANTARA ABOUT & CONTACT) ========== -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">⚡ My Projects</h2>
-        <div class="projects-grid">
-          
-          <a href="https://id-checker.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-            <div class="project-icon">🎮</div>
-            <h3>Free Fire ID Checker</h3>
-            <p>Cek ID FF via API isan.eu.org — langsung keluar nickname pemain.</p>
-            <span class="project-link">id-checker.vercel.app →</span>
-          </a>
+    </div>
+  </div>
+</section>
 
-          <a href="https://sholat.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-            <div class="project-icon">🕌</div>
-            <h3>Jadwal Sholat</h3>
-            <p>Jadwal sholat 5 waktu + hijriyah + ganti kota (API aladhan.com).</p>
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-grid">
+
+      <a href="https://id-checker.vercel.app" class="card" target="_blank">
+        <div class="project-icon">🎮</div>
+        <h3>Free Fire ID Checker</h3>
+        <p>Cek ID FF via API.</p>
+        <span class="project-link">Open →</span>
+      </a>
+
+      <a href="https://sholat.vercel.app" class="card" target="_blank">
+        <div class="project-icon">🕌</div>
+        <h3>Jadwal Sholat</h3>
+        <p>Jadwal sholat + hijriyah.</p>
+        <span class="project-link">Open →</span>
+      </a>
+
+      <div class="card coming-soon">
+        <div class="project-icon">🚀</div>
+        <h3>Next Project</h3>
+        <p>Coming soon...</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p>Creative developer, suka UI clean + dark neon.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 KenzX</p>
+  </div>
+</footer>
+
+</body>
+</html>            <p>Jadwal sholat 5 waktu + hijriyah + ganti kota (API aladhan.com).</p>
             <span class="project-link">sholat.vercel.app →</span>
           </a>
 
