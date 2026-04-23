@@ -611,3 +611,12 @@ html {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #c084fc;
+}
